@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+      
+        <h2 style="margin-left: 414px ;">MODIFIER VOTRE ANNONCE</h2>
+
+      </div>
+    </section>
+
+
+
+
+
+<div style ="  padding:25px ; border-style: solid; border-color:black ;  max-width: 800px; box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24); margin-top: 40px; margin-bottom: 40px;
+" class="container">   
+
+<form action="{% url 'editannonce' annonce.id %}" method="post" autocomplete="off" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="form-group">
+    <label for="formGroupExampleInput">Titre</label>
+    <input style="border-color: black;" type="text" class="form-control" id="formGroupExampleInput" value="{{annonce.Title}}" name="title">
+  </div>
+
+
+  <div class="form-group">
+    <label for="formGroupExampleInput">Type de votre logement</label>
+    <input style="border-color: black;" type="text" class="form-control" id="formGroupExampleInput" value="{{annonce.TypeLogement}}"  name="typelog">
+  </div>
+
+
+
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Nombre de chambres</label>
+    <select  style="border-color: black;" class="form-control" id="exampleFormControlSelect1" value="{{annonce.NombreChambre}}" name="chambre" >
+      
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+      <option>6</option>
+      <option>7</option>
+      <option>8</option>
+    </select>
+  </div>
+
+
+
+
+  <div class="form-group">
+    <label for="formGroupExampleInput">Surface en M²</label>
+    <input style="border-color: black;" type="number" class="form-control" id="formGroupExampleInput" value="{{annonce.Surface}}" name="surface">
+  </div>
+
+
+  <div class="form-group">
+    <label for="formGroupExampleInput">Distance au campus</label>
+    <input  style="border-color: black;"type="text" class="form-control" id="formGroupExampleInput" value="{{annonce.Emplacement}}" name="distance">
+  </div>
+
+
+
+
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Décrivez votre logement</label>
+    <textarea  style="border-color: black;"class="form-control" id="exampleFormControlTextarea1" rows="3" value="{{annonce.description}}" name="description">{{annonce.description}}</textarea>
+  </div>
+
+
+ 
+
+
+  <div class="form-group">
+    <label for="exampleFormControlFile1">prix de location</label>
+    <input style="border-color: black;"  type="number" class="form-control-file" id="exampleFormControlFile1" value="{{annonce.prix}}" name="prix">
+  </div>
+
+  
+  <div class="form-group">
+    <label for="formGroupExamplePoneNumber">numero de telephone</label>
+    <input  style="border-color: black;"type="PhoneNumber" class="form-control" id="formGroupExampleInput" value="{{annonce.NumTel}}"  name="numtel">
+  </div>
+
+
+  <div class="form-group">
+    <label for="exampleFormControlFile1">importer une photo de votre logement</label>
+    <input style="border-color: black;"  type="file" multiple class="form-control-file" id="exampleFormControlFile1" name="photo">
+  </div>
+
+
+  <button  style="margin-left:288px; background-color: black; width: 142px ; border-color: black;" type="submit" class="btn btn-primary">Modifier</button>
+</form>
+</div>
+
+{% endblock %}

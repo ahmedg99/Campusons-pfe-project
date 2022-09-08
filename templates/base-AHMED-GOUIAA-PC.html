@@ -1,0 +1,410 @@
+
+
+
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+  
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <link rel="stylesheet" href="{%static 'assets/css/style.css'%}">
+  <link rel="stylesheet" href="{%static 'assets/css/accounts.css'%}">
+  <link rel="stylesheet" href="{%static 'assets/css/mycss.css'%}">
+
+  <title>caumpus Universitaire Ons</title>
+
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- 
+    
+    <img src="{% static 'assets/img/favicon.png' %}" alt="My image">Favicons       -->
+  
+  <link href="{%static 'assets/img/Capture.png'%}" rel="icon">
+  <link href="{%static 'assets/img/c.png'%}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{%static 'assets/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+  <link href="{%static 'assets/vendor/icofont/icofont.min.css'%}" rel="stylesheet">
+  <link href="{%static 'assets/vendor/boxicons/css/boxicons.min.css'%}" rel="stylesheet">
+  <link href="{%static 'assets/vendor/animate.css/animate.min.css'%}" rel="stylesheet">
+  <link href="{%static 'assets/vendor/owl.carousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
+  <link href="{%static 'assets/vendor/venobox/venobox.css'%}" rel="stylesheet">
+  <link href="{%static 'assets/vendor/bootstrap/css/bootstrap-grid.css'%}" rel="stylesheet">
+  <link href="{%static 'assets/css/mycss.css'%}" rel="stylesheet">
+
+
+</head>
+
+
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <section id="topbar" class="d-none d-lg-block">
+    <div class="container d-flex">
+      <div class="contact-info mr-auto">
+        <i class="icofont-envelope"></i><a href="mailto:contact@example.com">onscampus@gmail.com</a>
+      </div>
+      <div class="social-links">
+        <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
+        <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
+        <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
+        <a href="#" class="skype"><i class="icofont-skype"></i></a>
+        <a href="#" class="linkedin"><i class="icofont-linkedin"></i></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="d-flex justify-content-center ">
+
+      <!-- <div class="logo mr-auto">
+        <h1 class="text-light"><a href="http://127.0.0.1:8000/"><span></span></a></h1>
+      </div> -->
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+
+
+
+          <li><a href="http://127.0.0.1:8000/" class="button2" style ='color: black;'>Acceuil</a>
+          </li>
+
+
+
+
+
+
+          <li class="drop-down"><a href="#">Université</a>
+            <ul>
+              {% load static%}
+
+              <li><a href="http://127.0.0.1:8000/enetcom/">ENETCOM</a></li>
+              <li><a href="http://127.0.0.1:8000/isims/">ISIMS</a></li>
+              <li><a href="http://127.0.0.1:8000/isgi/">ISGI</a></li>
+              <li><a href="http://127.0.0.1:8000/isms/">ISMS</a></li>
+              
+              
+            </ul>
+          </li>
+
+
+
+
+
+
+
+          <li class="drop-down"><a href="#">Touver un logement </a>
+            <ul>
+              <li><a href="http://127.0.0.1:8000/foyersetatique/">Foyers étatiques</a></li>
+              <li><a href="http://127.0.0.1:8000/listing/#">Foyers privés</a></li>
+              {%if user.is_staff%}
+                <li><a href="http://127.0.0.1:8000/annonce/annonce_a_approuver/">annonce a aprouver</a></li>
+              {%endif%}  
+            </ul>
+            </li>
+
+
+
+
+
+            <li class="drop-down"><a href="#">Vie Associative </a>
+              <ul>
+                <li class="drop-down"><a href="">CLUBS</a>
+                  <ul>
+                    <li><a href="http://127.0.0.1:8000/clubenetcom/">clubs de l enetcom</a></li>
+                    <li><a href="#">clubs de l isims</a></li>
+                    <li><a href="#">clubs de l isgi</a></li>
+                    <li><a href="#">clubs de l isms</a></li>
+                  </ul>
+                </li>
+                <li><a href="http://127.0.0.1:8000/manifestation/">Manifestations</a></li>
+              </ul>
+              </li>
+
+
+
+
+
+
+
+              <li class="drop-down"><a href="#">Vie Estudiantine</a>
+                <ul>
+                  <li class="drop-down"><a href="#">Alimentations et Besoins</a>
+                    <ul>
+                      <li><a href="http://127.0.0.1:8000/cafés/">cafés</a></li>
+                      <li><a href="http://127.0.0.1:8000/restaurants/">Restaurants</a></li>
+    
+                    </ul>
+                  </li>
+                  <li class="drop-down"><a href="#">Ativités à faire/à voir</a>
+                    <ul>
+                      <li><a href="http://127.0.0.1:8000/mosqu%C3%A9es/">Mosquées</a></li>
+                      <li><a href="#">Parcs</a></li>
+                      <li><a href="#">Salles de sport</a></li>
+                      <li><a href="http://127.0.0.1:8000/bib/">Bibliothèques</a></li>
+                      <li><a href="#">Cinéma/musées</a></li>
+    
+    
+                    </ul>
+                  </li>
+    
+                  <li class="drop-down"><a href="#">Shopping</a>
+                    <ul>
+                      <li><a href="http://127.0.0.1:8000/supermarchés/">Supermarchés</a></li>
+                      <li><a href="http://127.0.0.1:8000/centre/">Centres commerciaux</a></li>
+                      
+    
+    
+                    </ul>
+                  </li>
+    
+                  <li class="drop-down"><a href="#">Services</a>
+                    <ul>
+                      <li><a href="#">Banques/distributeurs</a></li>
+                      <li><a href="#">Postes</a></li>
+                      <li><a href="#">hopitaux et cliniques</a></li>
+                     
+    
+                    </ul>
+                  </li>
+                </ul>
+                
+
+                
+      
+
+
+                {%if user.is_authenticated%}
+        
+
+                <li class="drop-down"><a href="#">BIENVENUE  {{ user.username }}</a>
+                  <ul>
+                    <li><a href="http://127.0.0.1:8000/profile">Profil</a></li>
+                    <li><a href="http://127.0.0.1:8000/settings/change_password/">changer mot de passe</a></li>
+                    
+                    {%if user.is_staff%}
+                    <li><a href="http://127.0.0.1:8000/reponsequestion">questions des utilisateurs</a></li>
+                    {%else%}
+                    <li><a href="http://127.0.0.1:8000/reponse">reponse aux questions</a></li>
+                    {%endif%}
+                    <li><a href="http://127.0.0.1:8000/logout">Se déconnecter</a></li>
+      
+                  </ul>
+                </li>
+                {%if user.is_staff == False %}
+                <li ><a href="http://127.0.0.1:8000/question">aide </a>
+                </li>
+                {%endif%}
+
+                <li><a href="http://127.0.0.1:8000/annonce/new/" class="button" >publier une annonce  </a></li>
+                
+                {%else%}
+                {%if user.is_staff == False %}
+                <li ><a href="http://127.0.0.1:8000/question">aide </a>
+                </li>
+                {%endif%}
+                <li><a href="http://127.0.0.1:8000/login" class="button">connexion</a></li>
+                  <li><a href="http://127.0.0.1:8000/signup/#" class="button">s'inscrire</a></li>
+
+                {%endif%}
+      
+
+
+          
+
+
+
+
+
+
+
+
+
+          
+          
+          
+          
+          
+          
+
+
+
+          <li class="align-self-center "  style=" margin-left: 100px;  margin-top: 6px;  ">
+            <form class="d-flex" mehod="POST" action="{% url 'recherche' %}">
+              {% csrf_token %}
+            <input class="align-self-center form-control me-1" type="search" placeholder="recherche" aria-label="search" name="searched">
+            <a  style ="height: 30px; color: rgb(255, 255, 255) ; background-color: black; " type="button" class="btn btn-sm">Rechercher</a>
+          </form>
+          </li>
+
+
+
+
+
+
+
+
+        </ul>
+
+
+
+
+
+        
+      </nav><!-- .nav-menu -->
+
+    </div>
+ 
+  </header>
+
+  <div class="block-container" style="min-height: 79.4vh;">
+  {% block content %}
+  
+
+  
+  {% endblock  %}
+ </div>
+
+    <!-- ======= Footer ======= -->
+<!-- ======= Footer ======= -->
+<footer  style ="background-color: black;"id="footer">
+<!--
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <h4>Notre Newsletter</h4>
+            <p>Inscrivez vous à notre Newsletter</p>
+          </div>
+          <div class="col-lg-6">
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div> 
+  
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+  
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Universités</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="http://127.0.0.1:8000/enetcom/">ENECTOM</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="http://127.0.0.1:8000/isims/">ISIMS</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="http://127.0.0.1:8000/isgi/">ISGIS</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="http://127.0.0.1:8000/isms/">ISMS</a></li>
+            </ul>
+          </div>
+  
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>trouver un logement</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="http://127.0.0.1:8000/foyersetatique/">Foyers étatiques</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="http://127.0.0.1:8000/listing/">Foyers privés</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>vie Associative</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="http://127.0.0.1:8000/foyersetatique/">CLUBS</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+              <h6>Alimentations et Besoins:</h6>
+                <ul>
+                  <li><i class="bx bx-chevron-right"></i><a href="http://127.0.0.1:8000/cafés/">cafés</a></li>
+                  <li><i class="bx bx-chevron-right"></i><a href="http://127.0.0.1:8000/restaurants/">Restaurants</a></li>
+                </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+              <h6>Ativités à faire/à voir:</h6>
+                <ul>
+                  <li><i class="bx bx-chevron-right"></i><a href="http://127.0.0.1:8000/mosqu%C3%A9es/">Mosquées</a></li>
+                  <li><i class="bx bx-chevron-right"></i><a href="#">Parcs</a></li>
+                  <li><i class="bx bx-chevron-right"></i><a href="#">Salles de sport</a></li>
+                  <li><i class="bx bx-chevron-right"></i><a href="http://127.0.0.1:8000/bib/">Bibliothèques</a></li>
+                  <li><i class="bx bx-chevron-right"></i><a href="#">Cinéma/musées</a></li>
+                </ul>
+                
+          </div>
+
+
+              <div class="col-lg-2 col-md-6 footer-links">
+                <h6>Shopping:</h6>
+                <ul>
+                  <li><i class="bx bx-chevron-right"></i><a href="http://127.0.0.1:8000/supermarchés/">Supermarchés</a></li>
+                  <li><i class="bx bx-chevron-right"></i><a href="http://127.0.0.1:8000/centre/">Centres commerciaux</a></li>
+                </ul>
+              </div>
+
+              <div class="col-lg-2 col-md-6 footer-links">
+                <h6>Services:</h6>
+                <ul>
+                  <li><i class="bx bx-chevron-right"></i><a href="#">Banques/distributeurs</a></li>
+                  <li><i class="bx bx-chevron-right"></i><a href="#">Postes</a></li>
+                  <li><i class="bx bx-chevron-right"></i><a href="#">hopitaux et cliniques</a></li>
+                </ul>
+               </div>
+            
+          
+  
+          <div class="col-lg-3 col-md-6 footer-info">
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+ -->
+    <div  class="container"  >
+      <div class="copyright">
+        &copy; Copyright <strong><span>CampusOns</span></strong>. All Rights Reserved
+  
+    </div>
+  </footer><!-- End Footer -->
+  
+  
+  
+    <!-- Vendor JS Files -->
+    <script src="{%static 'assets/vendor/jquery/jquery.min.js'%}"></script>
+    <script src="{%static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+    <script src="{%static 'assets/vendor/jquery.easing/jquery.easing.min.js'%}"></script>
+    <script src="{%static 'assets/vendor/php-email-form/validate.js'%}"></script>
+    <script src="{%static 'assets/vendor/jquery-sticky/jquery.sticky.js'%}"></script>
+    <script src="{%static 'assets/vendor/owl.carousel/owl.carousel.min.js'%}"></script>
+    <script src="{%static 'assets/vendor/waypoints/jquery.waypoints.min.js'%}"></script>
+    <script src="{%static 'assets/vendor/counterup/counterup.min.js'%}"></script>
+    <script src="{%static 'assets/vendor/isotope-layout/isotope.pkgd.min.js'%}"></script>
+    <script src="{%static 'assets/vendor/venobox/venobox.min.js'%}"></script>
+     
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Template Main JS File -->
+    <script src="{%static 'assets/js/main.js'%}"></script>
+    <script src="{%static 'bootstrap/js/jquery-3.5.1.min.js'%}"></script>
+    <script src="{%static 'bootstrap/js/popper.min.js'%}"></script>
+    <script src="{%static 'bootstrap/js/bootstrap.min.js'%}"></script>
+</body>
+
+</html>

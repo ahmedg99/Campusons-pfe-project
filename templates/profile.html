@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block stylesheet %}
+  <link rel="stylesheet" href="{% static 'css/account.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+{% endblock %}
+
+{% block content  %}
+<!--
+<div class="container">
+  <div id="contact" >
+        
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-img">
+                    {% if  account.Profilephoto %}
+                        <img src="{{account.Profilephoto.url}}" alt=""/>
+                    {% else %}
+                        <img src="" alt=""/>
+                    {%endif %}    
+                   
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="profile-head">
+                            <h5>
+                                 bienvenue {{ user.username }}
+                            </h5>
+                           
+                            
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href='http://127.0.0.1:8000/profile' role="tab" aria-controls="home" aria-selected="true">à propos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="http://127.0.0.1:8000/profile/annonces" role="tab" aria-controls="profile" aria-selected="false">publication</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2">
+                
+                    
+                    <a href="http://127.0.0.1:8000/profile/edit" class="btn danger">modifier le profile</a>
+                  
+            </div>
+        </div>
+        <div class="row">
+          
+            <div class="col-md-8">
+                <div class="tab-content profile-tab" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Nom d'utilisateur</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{ account.username }}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>nom et prenom</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{ account.first_name }} {{ account.last_name }}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Email</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{ account.email }}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>numero de telephone</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{ account.PhoneNumber }}</p>
+                                    </div>
+                                   
+                                </div>
+                                
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+  </div>         
+</div>
+
+
+
+
+
+-->
+
+<div  style="position:relative; height:80vh;">
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+  
+        
+          <h1 class="text-center logo my-4">
+            <a style="color: black;">Profil</a>
+          </h1>
+  
+        </div>
+      </section><!-- End Breadcrumbs -->
+
+
+<div style="box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);  margin:auto; padding:30px; width: 849px; "class="row">
+
+  <div style="width: 383px ; height:auto; " >
+    <h2 style="color: black; margin-left:55px" class="portfolio-title" href="">Bienvenue {{ user.username }} </h2>
+    <div class="profile-img" >
+        {% if  account.Profilephoto %}
+            <img src="{{account.Profilephoto.url}}" alt=""/>
+        {% else %}
+            <img src="" alt=""/>
+        {%endif %}    
+       
+    </div>  </div>
+
+  <div style="width: 32% ; margin-left:40px  ">
+    <h3 style="color: black;"> </h3>
+    <ul style="margin-top: 3rem;">
+      <li><strong>Nom d'utilisateur</strong> : {{ account.username }}</li>
+      <li><strong>Email</strong>: {{ account.email }}</li>
+      <li><strong>numéro de téléphone</strong>: {{ account.PhoneNumber }}</li>
+
+    </ul>
+    <a href="http://127.0.0.1:8000/profile/edit" style ="  display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    width: 219px;
+    height: 40px;
+    border-radius: 4px;
+    background: #D50204;
+    color: #fff;
+    margin-bottom: 12px;
+    transition: all 0.4s;" > Modifier mon profil </a>
+    <ul>
+
+    <a href="http://127.0.0.1:8000/profile/annonces" style ="  display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    width: 219px;
+    height: 40px;
+    border-radius: 4px;
+    background: #D50204;
+    color: #fff;
+    transition: all 0.4s;" > Mes publications </a>
+</ul>
+
+  </div>
+
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+    
+{% if searched %}
+
+  <section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+
+    
+      <h1 class="text-center logo my-4">
+        <a style="color: black;">votre recherche de {{ searched }}:</a>
+      </h1>
+
+    </div>
+  </section>
+
+
+<br/>
+{% for annonce in annonce %}
+ {% if annonce.is_approved %}
+ <div  class="container mt-5 mb-5">
+  <div class="d-flex justify-content-center row">
+      <div class="col-md-10">
+          <div class="row p-2 bg-white border rounded">
+              <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="{{annonce.photo.url}}"></div>
+              <div  class="col-md-6 mt-1">
+                  <h5 style="    font-size: 0;">Quant olap shirts</h5>
+                  <div class="d-flex flex-row">
+                    <h2 style=" width: 240%;" ><a style=" color: #D50204;" href="{% url 'annonce' annonce.id %}" >{{ annonce.Title}}</a></h2>
+                  </div>
+                  <li><strong>type</strong>: {{ annonce.TypeLogement}} </li>
+                  <li><strong>prix</strong>: {{ annonce.prix}} DT par mois </li>
+           
+                  <li><strong>nombre de chambre</strong>: {{annonce.NombreChambre}}</li>
+                  <li><strong>surface</strong>: {{annonce.Surface}} m²</li>
+                  <li><strong>Emplacement</strong>: {{annonce.Emplacement}} m</li>
+                  <li><strong>date de creation</strong>: {{annonce.created_at}}</li>
+              </div>
+              <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+                  <div class="d-flex flex-row align-items-center">
+                      <h4  class="mr-1"></h4><span style="font-size: 25px;" class="strike-text">{{ annonce.prix}} DT / mois</span>
+                  </div>
+                  <div class="d-flex flex-column mt-4">
+                    <a style="background: #D50204; color: #fff;" class="btn  btn-sm " type="button" href="{% url 'annonce' annonce.id %}" >Details</a>
+                    <a style="background: black; color: #fff;"  class="btn  btn-sm mt-2" type="button">Contacter le locateur</a>
+                  </div>
+
+              </div>
+          </div>
+
+      </div>
+  </div>
+</div>
+
+  <br/>
+ {%endif%}
+{% endfor %}
+
+{% else %}
+<section id="breadcrumbs" class="breadcrumbs">
+  <div class="container">
+
+  
+    <h1 class="text-center logo my-4">
+      <a style="color: black;">ecrire quelque chose dans la barre de recherche</a>
+    </h1>
+
+  </div>
+</section>
+
+{% endif %}
+
+</div>    
+{% endblock %}

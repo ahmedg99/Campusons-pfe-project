@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+      
+        <h1 class="text-center logo my-4">
+          <a style="color: black;">Liste des annonces disponibles</a>
+        </h1>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+
+
+{%for Annonce in boards%}
+        {% if Annonce.is_approved %}
+       
+        
+       <!--  <div style=" margin: 31px 370px 31px 361px; box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);     padding: 40px; padding: 13px;
+        margin-bottom: 63px; "class="row">
+
+          <div style="width: 300px ; height: auto;">
+            <h2 style=" width: 240%;color: black;" ><a href="{% url 'annonce' Annonce.id %}" >{{ Annonce.Title}}</a></h2>
+              <img style="max-width:150%; height: 300px;" src="{{Annonce.photo.url}}" class="img-fluid" alt="" href="">
+          </div>
+
+          <div style="width: 50% ;      margin-left: 200px;">
+            <h3 style="color: black;"> </h3>
+            <ul style="margin-top: 64px;">
+              <li><strong>type</strong>: {{ Annonce.TypeLogement}} </li>
+              <li><strong>prix</strong>: {{ Annonce.prix}} DT par mois </li>
+
+              <li><strong>nombre de chambre</strong>: {{Annonce.NombreChambre}}</li>
+              <li><strong>surface</strong>: {{Annonce.Surface}} m²</li>
+              <li><strong>Emplacement</strong>: {{Annonce.Emplacement}} m</li>
+              <li><strong>date de creation</strong>: {{Annonce.created_at}}</li>
+              
+            </ul>
+
+            
+          </div>
+
+        </div>
+      
+
+
+
+
+-->
+
+
+
+
+        <div  class="container mt-5 mb-5">
+          <div class="d-flex justify-content-center row">
+              <div class="col-md-10">
+                  <div class="row p-2 bg-white border rounded">
+                      <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="{{Annonce.photo.url}}"></div>
+                      <div  class="col-md-6 mt-1">
+                          <h5 style="    font-size: 0;">Quant olap shirts</h5>
+                          <div class="d-flex flex-row">
+                            <h2 style=" width: 240%;" ><a style=" color: #D50204;" href="{% url 'annonce' Annonce.id %}" >{{ Annonce.Title}}</a></h2>
+                          </div>
+                            <li><strong>type</strong>: {{ Annonce.TypeLogement}} </li>
+              
+                            <li><strong>nombre de chambre</strong>: {{Annonce.NombreChambre}}</li>
+                            <li><strong>surface</strong>: {{Annonce.Surface}} m²</li>
+                            <li><strong>Emplacement</strong>: {{Annonce.Emplacement}} m</li>
+                      </div>
+                      <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+                          <div class="d-flex flex-row align-items-center">
+                              <h4  class="mr-1"></h4><span style="font-size: 25px;" class="strike-text">{{ Annonce.prix}} DT / mois</span>
+                          </div>
+                          <div class="d-flex flex-column mt-4">
+                            <a style="background: #D50204; color: #fff;" class="btn  btn-sm " type="button" href="{% url 'annonce' Annonce.id %}" >Details</a>
+                            <a style="background: black; color: #fff;"  class="btn  btn-sm mt-2" type="button">Contacter le locateur</a>
+                          </div>
+
+                      </div>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+
+
+
+
+
+
+
+            {%endif%}
+            {%endfor%}   
+            
+            
+            
+
+            
+{% endblock %}

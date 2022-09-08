@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block stylesheet %}
+  <link rel="stylesheet" href="{% static 'css/account.css' %}">
+{% endblock %}
+
+{% block content  %}
+
+
+  
+        
+        {% csrf_token %}
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+      
+            
+              <h1 class="text-center logo my-4">
+                <a style="color: black;">Mes Annonces</a>
+              </h1>
+      
+            </div>
+        </section>
+
+        {%for Annonce in annonces%}
+        <div  class="container mt-5 mb-5">
+          <div class="d-flex justify-content-center row">
+              <div class="col-md-10">
+                  <div class="row p-2 bg-white border rounded">
+                      <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="{{Annonce.photo.url}}"></div>
+                      <div  class="col-md-6 mt-1">
+                          <h5 style="    font-size: 0;">Quant olap shirts</h5>
+                          <div class="d-flex flex-row">
+                            <h2 style=" width: 240%;" ><a style=" color: #D50204;"  >{{ Annonce.Title}}</a></h2>
+                          </div>
+                          {% if Annonce.is_approved %}
+                          <li style="color:green"><strong>votre annonce est approuvée</strong></li>
+                          {% else %}
+                          <li style="color:crimson"><strong>votre annonce n'est pas encore approuvée</strong></li>
+                          {% endif%}
+                            <li><strong>type</strong>: {{ Annonce.TypeLogement}} </li>
+                            <li><strong>nombre de chambre</strong>: {{Annonce.NombreChambre}}</li>
+                            <li><strong>surface</strong>: {{Annonce.Surface}} m²</li>
+                            <li><strong>Emplacement</strong>: {{Annonce.Emplacement}} m</li>
+                            <li><strong>date de creation</strong>: {{Annonce.created_at}}</li>
+                            <li><strong>numero de telephone</strong>: {{Annonce.NumTel}}</li>
+                            <p>{{Annonce.description}}</p>
+                      </div>
+                      <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+                          <div class="d-flex flex-row align-items-center">
+                              <h4  class="mr-1"></h4><span style="font-size: 25px;" class="strike-text">{{ Annonce.prix}} DT / mois</span>
+                          </div>
+                          <div class="d-flex flex-column mt-4">
+                            <form action="{% url 'deleteannonceprof' Annonce.id %}" method='post'>
+                              {% csrf_token %}
+                              <button style ="  display: flex;
+                              align-items: center;
+                              justify-content: center;
+                              font-size: 24px;
+                              width: 219px;
+                              height: 40px;
+                              border-radius: 4px;
+                              background: #D50204;
+                              color: #fff;
+                              margin-bottom: 12px;
+                              transition: all 0.4s;" type="submit" class="btn" name="delete" value={{Annonce.id}}>supprimer</button>
+                          </form>
+                          <form action="{% url 'editannonce' Annonce.id  %}" method='post' >
+                            {% csrf_token %}
+                            <button style ="  display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 24px;
+                            width: 219px;
+                            height: 40px;
+                            border-radius: 4px;
+                            background: #D50204;
+                            color: #fff;
+                            margin-bottom: 12px;
+                            transition: all 0.4s;" type="submit" class="btn" name="bouton" value="1">modifier</button>
+                        </form>
+
+                          </div>
+
+                      </div>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+
+         
+        {%endfor%}
+          
+          
+
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block content  %}
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+      
+        <h1 class="text-center logo my-4">
+          <a style="color: black;">Modifier votre profil</a>
+        </h1>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+<div style="justify-content: center; display:flex; align-items: center;">
+<form style ="  padding:25px ;     
+border-style: solid; border-color:black ; min-width: 700px;  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24); margin-top: 40px; margin-bottom: 40px; " action ="{% url 'editprofile'  %}" method="post" autocomplete="off" enctype="multipart/form-data">
+
+    {% csrf_token %}
+  
+  
+    <div class="form-group">
+      <label for="formGroupExampleInput">Nom d'utilisateur</label>
+      <input style="border-color: black;" type="text" class="form-control" id="formGroupExampleInput" value="{{account.username}}" placeholder=" " name="username">
+    </div>
+    <!--
+  
+    <div class="form-group">
+        <label for="formGroupExampleInput">prenom</label>
+        <input style="border-color: black;" type="text" class="form-control" id="formGroupExampleInput" value="{{account.first_name}}" placeholder=" " name="firstname">
+      </div>
+  
+      <div class="form-group">
+        <label for="formGroupExampleInput">nom</label>
+        <input style="border-color: black;" type="text" class="form-control" id="formGroupExampleInput" value="{{account.last_name}}" placeholder=" " name="lastname">
+      </div>
+     -->
+      <div class="form-group">
+        <label for="formGroupExampleInput">email</label>
+        <input style="border-color: black;" type="text" class="form-control" id="formGroupExampleInput" value="{{account.email}}" placeholder=" " name="email">
+      </div>
+  
+
+  
+    <div class="form-group">
+      <label for="exampleFormControlFile1">importer une photo de profile</label>
+      <input style="border-color: black;"  type="file" class="form-control-file" id="exampleFormControlFile1" name="photoprofile">
+    </div>
+  
+  
+  
+  
+    
+    <div class="form-group">
+      <label for="formGroupExamplePoneNumber">numéro de télephone</label>
+      <input  style="border-color: black;"type="PhoneNumber" class="form-control" id="formGroupExampleInput" value="{{account.PhoneNumber}}" placeholder="" name="phonenum">
+    </div>
+  
+  
+  
+  
+  
+    <button  style="
+     border: black; background-color: black;" type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+</div>
+  {% endblock %}

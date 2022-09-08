@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    
+       
+            <div  >
+
+              
+                
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+      
+        <h1 class="text-center logo my-4">
+          <a style="color: black;">{{annonce.Title}}</a>
+        </h1>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+
+
+
+         <!--       <div style="     margin: 31px 112px 31px 112px; box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);     padding: 40px;
+                margin-bottom: 63px; "class="row">
+        
+                  <div class="col-lg-8">
+                    <h2 style="color: black;" class="portfolio-title">{{annonce.Title}}</h2>
+                      <img style="max-width: 70%; height: 500px;" src="{{annonce.photo.url}}" class="img-fluid" alt=""/>
+                  </div>
+        
+                  <div style ="    margin-left: -261px; "class="col-lg-4 portfolio-info" >
+                    <h3>informations</h3>
+                    <ul>
+                      <li><strong>Type de logement</strong>:  {{ annonce.TypeLogement }} </li>
+                      <li><strong>nombre de chambre</strong>: {{ annonce.NombreChambre }}</li>
+                      <li><strong>surface</strong>: {{ annonce.Surface }} m²</li>
+                      <li><strong>emplacement par rapport au compus</strong>: <a >{{ annonce.Emplacement }} m</a></li>
+                      <li><strong>numero de telephone</strong>: {{ annonce.NumTel }} </li>
+                      <li><strong>date de creation</strong>: {{ annonce.created_at }} </li>
+                    </ul>
+        
+                    <p>
+                      
+                      {{ annonce.description }}
+                    </p>
+                  </div>
+                </div>
+
+
+
+
+            </div>
+          -->
+          
+
+
+
+          <div class="container mt-5 mb-5">
+            <div class="d-flex justify-content-center row">
+                <div class="col-md-10">
+                    <div class="row p-2 bg-white border rounded">
+                        <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="{{annonce.photo.url}}"></div>
+                        <div class="col-md-6 mt-1">
+                          <h5 style="    font-size: 0;">Quant olap shirts</h5>
+                            <div class="d-flex flex-row">
+                              <h2 style="color:#D50204;" class="portfolio-title">{{annonce.Title}}</h2>
+                            </div>
+                              <ul>
+                                <li><strong>Type de logement</strong>:  {{ annonce.TypeLogement }} </li>
+                                <li><strong>nombre de chambre</strong>: {{ annonce.NombreChambre }}</li>
+                                <li><strong>surface</strong>: {{ annonce.Surface }} m²</li>
+                                <li><strong>emplacement par rapport au compus</strong>: <a >{{ annonce.Emplacement }} m</a></li>
+                                <li><strong>numero de telephone</strong>: {{ annonce.NumTel }} </li>
+                                <li><strong>Déscription</strong>: {{ annonce.description }} </li>
+
+                                <li><strong>date de creation</strong>: {{ annonce.created_at }} </li>
+
+                              </ul>
+                        </div>
+                        <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+                            <div class="d-flex flex-row align-items-center">
+                                <h4 class="mr-1"></h4><span style="font-size: 25px;" class="strike-text">{{ annonce.prix }} DT / mois</span>
+                            </div>
+                            <a style="background: black; color: #fff;" class="btn  btn-sm mt-2" type="button">Appeler le locateur</a>
+                            {% if user.is_staff %}
+
+                               <form action="{% url 'delete_annonce' annonce.id %}" method='post' >
+                                 {% csrf_token %}
+                                <button style="margin-top: 2px; padding: 5px; background: #D50204; color: #fff;" type="submit" class="btn">delete</button>
+          
+                               </form>
+                            {%endif%}
+                          </div>
+
+                        
+                          </div></div></div></div></div></div>
+
+
+
+
+
+
+{% endblock %}
+

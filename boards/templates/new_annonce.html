@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+      
+        <h2 style="margin-left: 414px ;">CREER VOTRE ANNONCE</h2>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+
+
+
+    <div style="justify-content: center; display:flex; align-items: center;">
+<div style ="  padding:25px ; border-style: solid; border-color:black ;  max-width: 800px; box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24); margin-top: 40px; margin-bottom: 40px;
+" class="container">   
+
+<form action="{% url 'annonce_new' %}" method="post" autocomplete="off" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="form-group">
+    <label for="formGroupExampleInput">Titre</label>
+    <input style="border-color: black;" type="text" class="form-control" id="formGroupExampleInput" placeholder="titre" name="title">
+  </div>
+
+
+  <div class="form-group">
+    <label for="formGroupExampleInput">Type de votre logement</label>
+    <input style="border-color: black;" type="text" class="form-control" id="formGroupExampleInput" placeholder="Example : appartement" name="typelog">
+  </div>
+
+
+
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Nombre de chambres</label>
+    <select  style="border-color: black;" class="form-control" id="exampleFormControlSelect1" name="chambre" >
+      
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+      <option>6</option>
+      <option>7</option>
+      <option>8</option>
+    </select>
+  </div>
+
+ 
+
+
+  <div class="form-group">
+    <label for="formGroupExampleInput">Surface en M²</label>
+    <input style="border-color: black;" type="number" class="form-control" id="formGroupExampleInput" placeholder="Example : 50m²" name="surface">
+  </div>
+
+
+  <div class="form-group">
+    <label for="formGroupExampleInput">Distance au campus</label>
+    <input  style="border-color: black;"type="text" class="form-control" id="formGroupExampleInput" placeholder="Example : 500 m" name="distance">
+  </div>
+
+
+
+
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Décrivez votre logement</label>
+    <textarea  style="border-color: black;"class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
+  </div>
+
+
+  <div    class="form-group">
+    <label for="exampleFormControlFile1">Prix de location par mois (en Dt)</label>
+    <input style="border-color: black;" type="number" class="form-control" id="formGroupExampleInput"  placeholder="Example : 500 " name="prix">
+  </div>
+
+
+
+
+  
+  <div class="form-group">
+    <label for="formGroupExamplePoneNumber">Numero de telephone</label>
+    <input  style="border-color: black;"type="PhoneNumber" class="form-control" id="formGroupExampleInput" value="+216" placeholder="+216********" name="numtel">
+  </div>
+
+
+  <div  style="border-color: black;" class="form-group">
+    <label for="formGroupExampleInput">Photos</label>
+    <input type="file" name = "files" multiple class="form-control-file"/>
+    </div>
+
+
+  <button  style="margin-left:288px; background-color: black; width: 142px ; border-color: black;" type="submit" class="btn btn-primary">Créer</button>
+</form>
+</div>
+    </div>
+
+{% endblock %}
