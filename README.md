@@ -9,6 +9,6 @@ les clubs, des annonces de locations des foyers près au campus …). Dans ce ma
 détaillée de notre projet ainsi que l’étude conceptuelle et la réalisation.
  
 # Demo
- ![alt text](https://github.com/ahmedg99/Campusons-pfe-project/blob/main/Media1.mp4raw=true)
+ ![alt text](https://github.com/ahmedg99/Campusons-pfe-project/blob/main/Media1.mp4?raw=true)
 
  
