@@ -16,7 +16,6 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
@@ -24,11 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'fz!6vi1e*6vu^+yxf(0%d8p42%r0bm@u^a71my293jz0gn15ay'
 
 
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.13','127.0.0.1','192.168.1.6']
+ALLOWED_HOSTS = ['192.168.1.13', '127.0.0.1', '192.168.1.6']
 
 
 # Application definition
@@ -43,10 +41,9 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'crispy_forms',
     'boards',
-    'phonenumber_field',
     'accounts'
-    
-  
+
+
 ]
 
 MIDDLEWARE = [
@@ -64,7 +61,7 @@ ROOT_URLCONF = 'caumpusons.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -72,13 +69,11 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                
+
             ],
         },
     },
 ]
-
-
 
 
 WSGI_APPLICATION = 'caumpusons.wsgi.application'
@@ -89,15 +84,14 @@ WSGI_APPLICATION = 'caumpusons.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Boards_django',
-        'USER': 'postgres',
-        'PASSWORD': 'ENETCOM2021',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mydatabase',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
     }
 }
-
 
 
 # Password validation
@@ -141,9 +135,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS=[
-    os.path.join(BASE_DIR,'static'),
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
 ]
 
-LOGOUT_REDIRECT_URL='home' 
+LOGOUT_REDIRECT_URL = 'home'
 LOGIN_REDIRECT_URL = 'home'
